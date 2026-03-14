@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Password generator</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <h1>Password Generator</h1>
+
+<!-- Length controls (hidden in memorable mode) -->
+<div id="lengthControls">
+  <label>Password length:</label>
+  <input type="range" id="length" min="6" max="32" value="16">
+  <span id="lengthValue">16</span>
+
+  <br><br>
+
+  <label>Or type length manually:</label>
+  <input type="number" id="manualLength" min="6" max="32" value="16">
+</div>
+
+<br>
+
+<!-- Memorable mode toggle -->
+<label>
+  <input type="checkbox" id="memorableMode">
+  Memorable mode (passphrase)
+</label>
+
+<br><br>
+
+<!-- Word count dropdown (hidden until memorable mode is ON) -->
+<div id="wordCountContainer" style="display:none;">
+  <label>Select number of words:</label>
+  <select id="wordCount">
+    <option value="2">2 words (easy to remember)</option>
+    <option value="3" selected>3 words (balanced)</option>
+    <option value="4">4 words (strongest)</option>
+  </select>
+</div>
+
+<br>
+
+<!-- Dark mode toggle -->
+<label>
+  <input type="checkbox" id="darkModeToggle">
+  Dark Mode
+</label>
+
+<br><br>
+
+<!-- Buttons -->
+<button id="generateBtn">Generate Password</button>
+<button id="copyBtn">Copy to Clipboard</button>
+
+<!-- Output container (click to reveal/hide) -->
+<div id="passwordContainer">
+  <div id="output">Click to reveal</div>
+</div>
+
+<!-- Strength bar -->
+<div id="strengthBar"></div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
